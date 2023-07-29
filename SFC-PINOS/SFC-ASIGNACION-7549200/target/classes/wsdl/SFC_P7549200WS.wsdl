@@ -1,0 +1,758 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:ax2117="http://webservice.sfc.mediosdepago.tecnocom.com/xsd"
+	xmlns:ax2118="http://sfcNewAge.soapwebservices.ease/xsd"
+	xmlns:ns="http://webservice.sfc.mediosdepago.tecnocom.com"
+	xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+	xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+	xmlns:ns1="http://org.apache.axis2/xsd"
+	xmlns:ax2121="http://commons.soapwebservices.ease/xsd"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	targetNamespace="http://webservice.sfc.mediosdepago.tecnocom.com">
+	<wsdl:documentation>SFC_P7549200WS</wsdl:documentation>
+	<wsdl:types>
+		<xs:schema attributeFormDefault="qualified"
+			elementFormDefault="qualified"
+			
+			targetNamespace="http://commons.soapwebservices.ease/xsd">
+			<xs:complexType name="RegistroNewAge">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="registro_Numero"
+						type="xs:int" />
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+		<xs:schema attributeFormDefault="qualified"
+			elementFormDefault="qualified"
+			targetNamespace="http://sfcNewAge.soapwebservices.ease/xsd">
+			<xs:complexType name="PeticionNewAge">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="autoPaginable"
+						type="xs:boolean" />
+					<xs:element minOccurs="0" name="avanzar"
+						type="xs:boolean" />
+					<xs:element minOccurs="0" name="clave" nillable="true"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="entidad" nillable="true"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="idioma" nillable="true"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="indMasDatos"
+						nillable="true" type="xs:string" />
+					<xs:element minOccurs="0" name="oficina" nillable="true"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="pantPagina"
+						nillable="true" type="xs:string" />
+					<xs:element minOccurs="0" name="password"
+						nillable="true" type="xs:string" />
+					<xs:element minOccurs="0" name="retroceder"
+						type="xs:boolean" />
+					<xs:element minOccurs="0" name="tipoOperacion"
+						nillable="true" type="xs:string" />
+					<xs:element minOccurs="0" name="usuario" nillable="true"
+						type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="RespuestaNewAge">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claveFin"
+						nillable="true" type="xs:string" />
+					<xs:element minOccurs="0" name="claveInicio"
+						nillable="true" type="xs:string" />
+					<xs:element minOccurs="0" name="descRetorno"
+						nillable="true" type="xs:string" />
+					<xs:element minOccurs="0" name="indMasDatos"
+						nillable="true" type="xs:string" />
+					<xs:element minOccurs="0" name="pantPagina"
+						nillable="true" type="xs:string" />
+					<xs:element minOccurs="0" name="retorno" nillable="true"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="tiempoEjecucion"
+						nillable="true" type="xs:string" />
+					<xs:element minOccurs="0" name="totalRegistros"
+						type="xs:int" />
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+		<xs:schema
+			xmlns:ax2119="http://sfcNewAge.soapwebservices.ease/xsd"
+			xmlns:ax2122="http://commons.soapwebservices.ease/xsd"
+			attributeFormDefault="qualified" elementFormDefault="qualified"
+			targetNamespace="http://webservice.sfc.mediosdepago.tecnocom.com/xsd">
+			<xs:import
+				namespace="http://sfcNewAge.soapwebservices.ease/xsd" />
+			<xs:import
+				namespace="http://commons.soapwebservices.ease/xsd" />
+			<xs:complexType name="Peticion_P7549200WS">
+				<xs:complexContent>
+					<xs:extension base="ax2119:PeticionNewAge">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="cashpr10"
+								type="xs:float" />
+							<xs:element minOccurs="0" name="cashpre1"
+								type="xs:float" />
+							<xs:element minOccurs="0" name="cashpre2"
+								type="xs:float" />
+							<xs:element minOccurs="0" name="cashpre3"
+								type="xs:float" />
+							<xs:element minOccurs="0" name="cashpre4"
+								type="xs:float" />
+							<xs:element minOccurs="0" name="cashpre5"
+								type="xs:float" />
+							<xs:element minOccurs="0" name="cashpre6"
+								type="xs:float" />
+							<xs:element minOccurs="0" name="cashpre7"
+								type="xs:float" />
+							<xs:element minOccurs="0" name="cashpre8"
+								type="xs:float" />
+							<xs:element minOccurs="0" name="cashpre9"
+								type="xs:float" />
+							<xs:element minOccurs="0" name="codaplic"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="codcue10"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="codcuen1"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="codcuen2"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="codcuen3"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="codcuen4"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="codcuen5"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="codcuen6"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="codcuen7"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="codcuen8"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="codcuen9"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="codevent"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="codhisto"
+								type="xs:long" />
+							<xs:element minOccurs="0" name="codidmsj"
+								type="xs:int" />
+							<xs:element minOccurs="0" name="codrespu"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="codretor"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="codtermi"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="codusuar"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="datoseve"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="deserror"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="despro10"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="desprog1"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="desprog2"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="desprog3"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="desprog4"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="desprog5"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="desprog6"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="desprog7"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="desprog8"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="desprog9"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="idclie10"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="idclien1"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="idclien2"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="idclien3"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="idclien4"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="idclien5"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="idclien6"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="idclien7"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="idclien8"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="idclien9"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="idrepeti"
+								type="xs:int" />
+							<xs:element minOccurs="0" name="idsentid"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="idtransa"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="idtraori"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="longmens"
+								type="xs:int" />
+							<xs:element minOccurs="0" name="numpgeva"
+								type="xs:int" />
+							<xs:element minOccurs="0" name="numsol10"
+								type="xs:int" />
+							<xs:element minOccurs="0" name="numsoli1"
+								type="xs:int" />
+							<xs:element minOccurs="0" name="numsoli2"
+								type="xs:int" />
+							<xs:element minOccurs="0" name="numsoli3"
+								type="xs:int" />
+							<xs:element minOccurs="0" name="numsoli4"
+								type="xs:int" />
+							<xs:element minOccurs="0" name="numsoli5"
+								type="xs:int" />
+							<xs:element minOccurs="0" name="numsoli6"
+								type="xs:int" />
+							<xs:element minOccurs="0" name="numsoli7"
+								type="xs:int" />
+							<xs:element minOccurs="0" name="numsoli8"
+								type="xs:int" />
+							<xs:element minOccurs="0" name="numsoli9"
+								type="xs:int" />
+							<xs:element minOccurs="0" name="ptosor10"
+								type="xs:long" />
+							<xs:element minOccurs="0" name="ptosori1"
+								type="xs:long" />
+							<xs:element minOccurs="0" name="ptosori2"
+								type="xs:long" />
+							<xs:element minOccurs="0" name="ptosori3"
+								type="xs:long" />
+							<xs:element minOccurs="0" name="ptosori4"
+								type="xs:long" />
+							<xs:element minOccurs="0" name="ptosori5"
+								type="xs:long" />
+							<xs:element minOccurs="0" name="ptosori6"
+								type="xs:long" />
+							<xs:element minOccurs="0" name="ptosori7"
+								type="xs:long" />
+							<xs:element minOccurs="0" name="ptosori8"
+								type="xs:long" />
+							<xs:element minOccurs="0" name="ptosori9"
+								type="xs:long" />
+							<xs:element minOccurs="0" name="ptosre10"
+								type="xs:long" />
+							<xs:element minOccurs="0" name="ptosred1"
+								type="xs:long" />
+							<xs:element minOccurs="0" name="ptosred2"
+								type="xs:long" />
+							<xs:element minOccurs="0" name="ptosred3"
+								type="xs:long" />
+							<xs:element minOccurs="0" name="ptosred4"
+								type="xs:long" />
+							<xs:element minOccurs="0" name="ptosred5"
+								type="xs:long" />
+							<xs:element minOccurs="0" name="ptosred6"
+								type="xs:long" />
+							<xs:element minOccurs="0" name="ptosred7"
+								type="xs:long" />
+							<xs:element minOccurs="0" name="ptosred8"
+								type="xs:long" />
+							<xs:element minOccurs="0" name="ptosred9"
+								type="xs:long" />
+							<xs:element minOccurs="0" name="texto1"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="texto10"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="texto2"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="texto3"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="texto4"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="texto5"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="texto6"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="texto7"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="texto8"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="texto9"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="timetran"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="tipopu10"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="tipopun1"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="tipopun2"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="tipopun3"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="tipopun4"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="tipopun5"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="tipopun6"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="tipopun7"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="tipopun8"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="tipopun9"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="tipopunt"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="tiptrans"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="totcashp"
+								type="xs:float" />
+							<xs:element minOccurs="0" name="totptoor"
+								type="xs:long" />
+							<xs:element minOccurs="0" name="totptore"
+								type="xs:long" />
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="Respuesta_P7549200WS">
+				<xs:complexContent>
+					<xs:extension base="ax2119:RespuestaNewAge">
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" minOccurs="0"
+								name="registros_P7549200" nillable="true"
+								type="ax2117:Registro_P7549200WS" />
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="Registro_P7549200WS">
+				<xs:complexContent>
+					<xs:extension base="ax2122:RegistroNewAge">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="cashpr10"
+								type="xs:float" />
+							<xs:element minOccurs="0" name="cashpre1"
+								type="xs:float" />
+							<xs:element minOccurs="0" name="cashpre2"
+								type="xs:float" />
+							<xs:element minOccurs="0" name="cashpre3"
+								type="xs:float" />
+							<xs:element minOccurs="0" name="cashpre4"
+								type="xs:float" />
+							<xs:element minOccurs="0" name="cashpre5"
+								type="xs:float" />
+							<xs:element minOccurs="0" name="cashpre6"
+								type="xs:float" />
+							<xs:element minOccurs="0" name="cashpre7"
+								type="xs:float" />
+							<xs:element minOccurs="0" name="cashpre8"
+								type="xs:float" />
+							<xs:element minOccurs="0" name="cashpre9"
+								type="xs:float" />
+							<xs:element minOccurs="0" name="codaplic"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="codcue10"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="codcuen1"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="codcuen2"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="codcuen3"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="codcuen4"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="codcuen5"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="codcuen6"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="codcuen7"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="codcuen8"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="codcuen9"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="codentid"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="codevent"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="codhisto"
+								type="xs:long" />
+							<xs:element minOccurs="0" name="codidmsj"
+								type="xs:int" />
+							<xs:element minOccurs="0" name="codrespu"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="codretor"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="codtermi"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="codusuar"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="datoseve"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="deserror"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="despro10"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="desprog1"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="desprog2"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="desprog3"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="desprog4"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="desprog5"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="desprog6"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="desprog7"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="desprog8"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="desprog9"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="idclie10"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="idclien1"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="idclien2"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="idclien3"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="idclien4"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="idclien5"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="idclien6"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="idclien7"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="idclien8"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="idclien9"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="idrepeti"
+								type="xs:int" />
+							<xs:element minOccurs="0" name="idsentid"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="idtransa"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="idtraori"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="longmens"
+								type="xs:int" />
+							<xs:element minOccurs="0" name="numpgeva"
+								type="xs:int" />
+							<xs:element minOccurs="0" name="numsol10"
+								type="xs:int" />
+							<xs:element minOccurs="0" name="numsoli1"
+								type="xs:int" />
+							<xs:element minOccurs="0" name="numsoli2"
+								type="xs:int" />
+							<xs:element minOccurs="0" name="numsoli3"
+								type="xs:int" />
+							<xs:element minOccurs="0" name="numsoli4"
+								type="xs:int" />
+							<xs:element minOccurs="0" name="numsoli5"
+								type="xs:int" />
+							<xs:element minOccurs="0" name="numsoli6"
+								type="xs:int" />
+							<xs:element minOccurs="0" name="numsoli7"
+								type="xs:int" />
+							<xs:element minOccurs="0" name="numsoli8"
+								type="xs:int" />
+							<xs:element minOccurs="0" name="numsoli9"
+								type="xs:int" />
+							<xs:element minOccurs="0" name="ptosor10"
+								type="xs:long" />
+							<xs:element minOccurs="0" name="ptosori1"
+								type="xs:long" />
+							<xs:element minOccurs="0" name="ptosori2"
+								type="xs:long" />
+							<xs:element minOccurs="0" name="ptosori3"
+								type="xs:long" />
+							<xs:element minOccurs="0" name="ptosori4"
+								type="xs:long" />
+							<xs:element minOccurs="0" name="ptosori5"
+								type="xs:long" />
+							<xs:element minOccurs="0" name="ptosori6"
+								type="xs:long" />
+							<xs:element minOccurs="0" name="ptosori7"
+								type="xs:long" />
+							<xs:element minOccurs="0" name="ptosori8"
+								type="xs:long" />
+							<xs:element minOccurs="0" name="ptosori9"
+								type="xs:long" />
+							<xs:element minOccurs="0" name="ptosre10"
+								type="xs:long" />
+							<xs:element minOccurs="0" name="ptosred1"
+								type="xs:long" />
+							<xs:element minOccurs="0" name="ptosred2"
+								type="xs:long" />
+							<xs:element minOccurs="0" name="ptosred3"
+								type="xs:long" />
+							<xs:element minOccurs="0" name="ptosred4"
+								type="xs:long" />
+							<xs:element minOccurs="0" name="ptosred5"
+								type="xs:long" />
+							<xs:element minOccurs="0" name="ptosred6"
+								type="xs:long" />
+							<xs:element minOccurs="0" name="ptosred7"
+								type="xs:long" />
+							<xs:element minOccurs="0" name="ptosred8"
+								type="xs:long" />
+							<xs:element minOccurs="0" name="ptosred9"
+								type="xs:long" />
+							<xs:element minOccurs="0" name="texto1"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="texto10"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="texto2"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="texto3"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="texto4"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="texto5"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="texto6"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="texto7"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="texto8"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="texto9"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="timetran"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="tipopu10"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="tipopun1"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="tipopun2"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="tipopun3"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="tipopun4"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="tipopun5"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="tipopun6"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="tipopun7"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="tipopun8"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="tipopun9"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="tipopunt"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="tiptrans"
+								nillable="true" type="xs:string" />
+							<xs:element minOccurs="0" name="totcashp"
+								type="xs:float" />
+							<xs:element minOccurs="0" name="totptoor"
+								type="xs:long" />
+							<xs:element minOccurs="0" name="totptore"
+								type="xs:long" />
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+		</xs:schema>
+		<xs:schema
+			xmlns:ax2120="http://webservice.sfc.mediosdepago.tecnocom.com/xsd"
+			attributeFormDefault="qualified" elementFormDefault="qualified"
+			targetNamespace="http://webservice.sfc.mediosdepago.tecnocom.com">
+			<xs:import
+				namespace="http://webservice.sfc.mediosdepago.tecnocom.com/xsd" />
+			<xs:element name="Exception">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="Exception" nillable="true" type="xs:anyType" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="runService">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="msgEnvio"
+							nillable="true" type="ax2120:Peticion_P7549200WS" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="runServiceResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="return" nillable="true"
+							type="ax2120:Respuesta_P7549200WS" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="testNametransaccionResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="return" nillable="true"
+							type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="runServiceRequest">
+		<wsdl:part name="parameters" element="ns:runService" />
+	</wsdl:message>
+	<wsdl:message name="runServiceResponse">
+		<wsdl:part name="parameters" element="ns:runServiceResponse" />
+	</wsdl:message>
+	<wsdl:message name="Exception">
+		<wsdl:part name="parameters" element="ns:Exception" />
+	</wsdl:message>
+	<wsdl:message name="testNametransaccionRequest" />
+	<wsdl:message name="testNametransaccionResponse">
+		<wsdl:part name="parameters"
+			element="ns:testNametransaccionResponse" />
+	</wsdl:message>
+	<wsdl:portType name="SFC_P7549200WSPortType">
+		<wsdl:operation name="runService">
+			<wsdl:input message="ns:runServiceRequest"
+				wsaw:Action="urn:runService" />
+			<wsdl:output message="ns:runServiceResponse"
+				wsaw:Action="urn:runServiceResponse" />
+			<wsdl:fault message="ns:Exception" name="Exception"
+				wsaw:Action="urn:runServiceException" />
+		</wsdl:operation>
+		<wsdl:operation name="testNametransaccion">
+			<wsdl:input message="ns:testNametransaccionRequest"
+				wsaw:Action="urn:testNametransaccion" />
+			<wsdl:output message="ns:testNametransaccionResponse"
+				wsaw:Action="urn:testNametransaccionResponse" />
+			<wsdl:fault message="ns:Exception" name="Exception"
+				wsaw:Action="urn:testNametransaccionException" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="SFC_P7549200WSSoap11Binding"
+		type="ns:SFC_P7549200WSPortType">
+		<soap:binding
+			transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+		<wsdl:operation name="runService">
+			<soap:operation soapAction="urn:runService"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="Exception">
+				<soap:fault use="literal" name="Exception" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="testNametransaccion">
+			<soap:operation soapAction="urn:testNametransaccion"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="Exception">
+				<soap:fault use="literal" name="Exception" />
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="SFC_P7549200WSSoap12Binding"
+		type="ns:SFC_P7549200WSPortType">
+		<soap12:binding
+			transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+		<wsdl:operation name="runService">
+			<soap12:operation soapAction="urn:runService"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="Exception">
+				<soap12:fault use="literal" name="Exception" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="testNametransaccion">
+			<soap12:operation
+				soapAction="urn:testNametransaccion" style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="Exception">
+				<soap12:fault use="literal" name="Exception" />
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="SFC_P7549200WSHttpBinding"
+		type="ns:SFC_P7549200WSPortType">
+		<http:binding verb="POST" />
+		<wsdl:operation name="runService">
+			<http:operation location="SFC_P7549200WS/runService" />
+			<wsdl:input>
+				<mime:content type="text/xml" part="runService" />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml" part="runService" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="testNametransaccion">
+			<http:operation
+				location="SFC_P7549200WS/testNametransaccion" />
+			<wsdl:input>
+				<mime:content type="text/xml"
+					part="testNametransaccion" />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml"
+					part="testNametransaccion" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="SFC_P7549200WS">
+		<wsdl:port name="SFC_P7549200WSHttpsSoap11Endpoint"
+			binding="ns:SFC_P7549200WSSoap11Binding">
+			<soap:address
+				location="https://procemisorqacolombia.procesadoraindra.local:446/axis2SFC/services/SFC_P7549200WS.SFC_P7549200WSHttpsSoap11Endpoint/" />
+		</wsdl:port>
+		<wsdl:port name="SFC_P7549200WSHttpSoap11Endpoint"
+			binding="ns:SFC_P7549200WSSoap11Binding">
+			<soap:address
+				location="http://procemisorqacolombia.procesadoraindra.local:8080/axis2SFC/services/SFC_P7549200WS.SFC_P7549200WSHttpSoap11Endpoint/" />
+		</wsdl:port>
+		<wsdl:port name="SFC_P7549200WSHttpsSoap12Endpoint"
+			binding="ns:SFC_P7549200WSSoap12Binding">
+			<soap12:address
+				location="https://procemisorqacolombia.procesadoraindra.local:446/axis2SFC/services/SFC_P7549200WS.SFC_P7549200WSHttpsSoap12Endpoint/" />
+		</wsdl:port>
+		<wsdl:port name="SFC_P7549200WSHttpSoap12Endpoint"
+			binding="ns:SFC_P7549200WSSoap12Binding">
+			<soap12:address
+				location="http://procemisorqacolombia.procesadoraindra.local:8080/axis2SFC/services/SFC_P7549200WS.SFC_P7549200WSHttpSoap12Endpoint/" />
+		</wsdl:port>
+		<wsdl:port name="SFC_P7549200WSHttpsEndpoint"
+			binding="ns:SFC_P7549200WSHttpBinding">
+			<http:address
+				location="https://procemisorqacolombia.procesadoraindra.local:446/axis2SFC/services/SFC_P7549200WS.SFC_P7549200WSHttpsEndpoint/" />
+		</wsdl:port>
+		<wsdl:port name="SFC_P7549200WSHttpEndpoint"
+			binding="ns:SFC_P7549200WSHttpBinding">
+			<http:address
+				location="http://procemisorqacolombia.procesadoraindra.local:8080/axis2SFC/services/SFC_P7549200WS.SFC_P7549200WSHttpEndpoint/" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

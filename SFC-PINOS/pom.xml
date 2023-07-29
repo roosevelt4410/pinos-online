@@ -1,0 +1,25 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <groupId>co.com.coomeva.pinos</groupId>
+  <artifactId>SFC-PINOS</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>SFC-PINOS</name>
+  <description>Sistema que permitira cumplir con los requerimientos del sistema fidelización cliente Sistema que permitira cumplir con los requerimientos del sistema fidelización cliente pinos en linea</description>
+  
+  <properties>
+    <java.version>1.8</java.version>
+    <spring-cloud.version>Greenwich.SR3</spring-cloud.version>
+    <spring-boot.version>2.1.8.RELEASE</spring-boot.version>
+    <endorsed.dir>${project.build.directory}\endorsed</endorsed.dir>
+  </properties>
+  
+  
+  <modules>
+    <module>SFC-CREACION-7542600</module>
+    <module>SFC-ASIGNACION-7549200</module>
+    <module>SFC-MAIN-CLIENTE</module>
+  </modules>
+  
+</project>

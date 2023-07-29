@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ax2129="http://webservice.sfc.mediosdepago.tecnocom.com/xsd" xmlns:ns="http://webservice.sfc.mediosdepago.tecnocom.com" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax2130="http://sfcNewAge.soapwebservices.ease/xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ax2132="http://commons.soapwebservices.ease/xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://webservice.sfc.mediosdepago.tecnocom.com">
+    <wsdl:documentation>SFC_P7542600WS</wsdl:documentation>
+    <wsdl:types>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://commons.soapwebservices.ease/xsd">
+            <xs:complexType name="EaseDate">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="anno" type="xs:int"/>
+                    <xs:element minOccurs="0" name="dia" type="xs:int"/>
+                    <xs:element minOccurs="0" name="format" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="mes" type="xs:int"/>
+                    <xs:element minOccurs="0" name="nombreDia" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nombreMes" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="valueDate" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="RegistroNewAge">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="registro_Numero" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://sfcNewAge.soapwebservices.ease/xsd">
+            <xs:complexType name="PeticionNewAge">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="autoPaginable" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="avanzar" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="clave" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="entidad" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="idioma" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="indMasDatos" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="oficina" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="pantPagina" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="retroceder" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="tipoOperacion" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="RespuestaNewAge">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="claveFin" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="claveInicio" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="descRetorno" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="indMasDatos" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="pantPagina" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="retorno" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="tiempoEjecucion" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="totalRegistros" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:ax2131="http://sfcNewAge.soapwebservices.ease/xsd" xmlns:ax2133="http://commons.soapwebservices.ease/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://webservice.sfc.mediosdepago.tecnocom.com/xsd">
+            <xs:import namespace="http://sfcNewAge.soapwebservices.ease/xsd"/>
+            <xs:import namespace="http://commons.soapwebservices.ease/xsd"/>
+            <xs:complexType name="Peticion_P7542600WS">
+                <xs:complexContent>
+                    <xs:extension base="ax2131:PeticionNewAge">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="apellid1" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="apellid2" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="buscador_codcuent" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="buscador_codprogr" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="buscador_faltades" nillable="true" type="ax2133:EaseDate"/>
+                            <xs:element minOccurs="0" name="buscador_faltahas" nillable="true" type="ax2133:EaseDate"/>
+                            <xs:element minOccurs="0" name="buscador_indblqac" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="buscador_indblqrd" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="cheqdata" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="codcuent" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="codprogr" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="codultex" type="xs:int"/>
+                            <xs:element minOccurs="0" name="descccue" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="desccent" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="desccpro" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="desctidc" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="domicili" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="fecblqac" nillable="true" type="ax2133:EaseDate"/>
+                            <xs:element minOccurs="0" name="fecblqrd" nillable="true" type="ax2133:EaseDate"/>
+                            <xs:element minOccurs="0" name="fechacti" nillable="true" type="ax2133:EaseDate"/>
+                            <xs:element minOccurs="0" name="fechalta" nillable="true" type="ax2133:EaseDate"/>
+                            <xs:element minOccurs="0" name="fechbaja" nillable="true" type="ax2133:EaseDate"/>
+                            <xs:element minOccurs="0" name="fecultex" nillable="true" type="ax2133:EaseDate"/>
+                            <xs:element minOccurs="0" name="idclient" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="indblqac" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="indblqrd" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="nombreid" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="obscuent" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="rnumcuen" type="xs:int"/>
+                            <xs:element minOccurs="0" name="sitactmo" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="swdistin" type="xs:int"/>
+                            <xs:element minOccurs="0" name="texblqac" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="texblqrd" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="tipidcli" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="tpacumul" type="xs:long"/>
+                            <xs:element minOccurs="0" name="tpanudef" type="xs:long"/>
+                            <xs:element minOccurs="0" name="tpcaduca" type="xs:long"/>
+                            <xs:element minOccurs="0" name="tpexcedi" type="xs:long"/>
+                            <xs:element minOccurs="0" name="tplibera" type="xs:long"/>
+                            <xs:element minOccurs="0" name="tpretblo" type="xs:long"/>
+                            <xs:element minOccurs="0" name="tpretesp" type="xs:long"/>
+                            <xs:element minOccurs="0" name="tpretman" type="xs:long"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="Respuesta_P7542600WS">
+                <xs:complexContent>
+                    <xs:extension base="ax2131:RespuestaNewAge">
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="registros_P7542600" nillable="true" type="ax2129:Registro_P7542600WS"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="Registro_P7542600WS">
+                <xs:complexContent>
+                    <xs:extension base="ax2133:RegistroNewAge">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="apellid1" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="apellid2" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="cheqdata" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="codcuent" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="codentid" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="codprogr" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="codultex" type="xs:int"/>
+                            <xs:element minOccurs="0" name="descccue" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="desccent" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="desccpro" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="desctidc" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="domicili" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="fecblqac" nillable="true" type="ax2133:EaseDate"/>
+                            <xs:element minOccurs="0" name="fecblqrd" nillable="true" type="ax2133:EaseDate"/>
+                            <xs:element minOccurs="0" name="fechacti" nillable="true" type="ax2133:EaseDate"/>
+                            <xs:element minOccurs="0" name="fechalta" nillable="true" type="ax2133:EaseDate"/>
+                            <xs:element minOccurs="0" name="fechbaja" nillable="true" type="ax2133:EaseDate"/>
+                            <xs:element minOccurs="0" name="fecultex" nillable="true" type="ax2133:EaseDate"/>
+                            <xs:element minOccurs="0" name="idclient" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="indblqac" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="indblqrd" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="nombreid" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="obscuent" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="rnumcuen" type="xs:int"/>
+                            <xs:element minOccurs="0" name="sitactmo" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="swdistin" type="xs:int"/>
+                            <xs:element minOccurs="0" name="texblqac" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="texblqrd" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="tipidcli" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="tpacumul" type="xs:long"/>
+                            <xs:element minOccurs="0" name="tpanudef" type="xs:long"/>
+                            <xs:element minOccurs="0" name="tpcaduca" type="xs:long"/>
+                            <xs:element minOccurs="0" name="tpexcedi" type="xs:long"/>
+                            <xs:element minOccurs="0" name="tplibera" type="xs:long"/>
+                            <xs:element minOccurs="0" name="tpretblo" type="xs:long"/>
+                            <xs:element minOccurs="0" name="tpretesp" type="xs:long"/>
+                            <xs:element minOccurs="0" name="tpretman" type="xs:long"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:ax2134="http://webservice.sfc.mediosdepago.tecnocom.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://webservice.sfc.mediosdepago.tecnocom.com">
+            <xs:import namespace="http://webservice.sfc.mediosdepago.tecnocom.com/xsd"/>
+            <xs:complexType name="Exception_Exception">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="Exception" nillable="true" type="xs:anyType"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="Exception">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="Exception" nillable="true" type="ns:Exception_Exception"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="runService">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="msgEnvio" nillable="true" type="ax2134:Peticion_P7542600WS"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="runServiceResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2134:Respuesta_P7542600WS"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="testNametransaccionResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="runServiceRequest">
+        <wsdl:part name="parameters" element="ns:runService"/>
+    </wsdl:message>
+    <wsdl:message name="runServiceResponse">
+        <wsdl:part name="parameters" element="ns:runServiceResponse"/>
+    </wsdl:message>
+    <wsdl:message name="Exception">
+        <wsdl:part name="parameters" element="ns:Exception"/>
+    </wsdl:message>
+    <wsdl:message name="testNametransaccionRequest"/>
+    <wsdl:message name="testNametransaccionResponse">
+        <wsdl:part name="parameters" element="ns:testNametransaccionResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="SFC_P7542600WSPortType">
+        <wsdl:operation name="runService">
+            <wsdl:input message="ns:runServiceRequest" wsaw:Action="urn:runService"/>
+            <wsdl:output message="ns:runServiceResponse" wsaw:Action="urn:runServiceResponse"/>
+            <wsdl:fault message="ns:Exception" name="Exception" wsaw:Action="urn:runServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="testNametransaccion">
+            <wsdl:input message="ns:testNametransaccionRequest" wsaw:Action="urn:testNametransaccion"/>
+            <wsdl:output message="ns:testNametransaccionResponse" wsaw:Action="urn:testNametransaccionResponse"/>
+            <wsdl:fault message="ns:Exception" name="Exception" wsaw:Action="urn:testNametransaccionException"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="SFC_P7542600WSSoap11Binding" type="ns:SFC_P7542600WSPortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="runService">
+            <soap:operation soapAction="urn:runService" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="Exception">
+                <soap:fault use="literal" name="Exception"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="testNametransaccion">
+            <soap:operation soapAction="urn:testNametransaccion" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="Exception">
+                <soap:fault use="literal" name="Exception"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="SFC_P7542600WSSoap12Binding" type="ns:SFC_P7542600WSPortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="runService">
+            <soap12:operation soapAction="urn:runService" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="Exception">
+                <soap12:fault use="literal" name="Exception"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="testNametransaccion">
+            <soap12:operation soapAction="urn:testNametransaccion" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="Exception">
+                <soap12:fault use="literal" name="Exception"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="SFC_P7542600WSHttpBinding" type="ns:SFC_P7542600WSPortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="runService">
+            <http:operation location="SFC_P7542600WS/runService"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="runService"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="runService"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="testNametransaccion">
+            <http:operation location="SFC_P7542600WS/testNametransaccion"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="testNametransaccion"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="testNametransaccion"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="SFC_P7542600WS">
+        <wsdl:port name="SFC_P7542600WSHttpsSoap11Endpoint" binding="ns:SFC_P7542600WSSoap11Binding">
+            <soap:address location="https://procemisorqacolombia.procesadoraindra.local:446/axis2SFC/services/SFC_P7542600WS.SFC_P7542600WSHttpsSoap11Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="SFC_P7542600WSHttpSoap11Endpoint" binding="ns:SFC_P7542600WSSoap11Binding">
+            <soap:address location="http://procemisorqacolombia.procesadoraindra.local:8080/axis2SFC/services/SFC_P7542600WS.SFC_P7542600WSHttpSoap11Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="SFC_P7542600WSHttpSoap12Endpoint" binding="ns:SFC_P7542600WSSoap12Binding">
+            <soap12:address location="http://procemisorqacolombia.procesadoraindra.local:8080/axis2SFC/services/SFC_P7542600WS.SFC_P7542600WSHttpSoap12Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="SFC_P7542600WSHttpsSoap12Endpoint" binding="ns:SFC_P7542600WSSoap12Binding">
+            <soap12:address location="https://procemisorqacolombia.procesadoraindra.local:446/axis2SFC/services/SFC_P7542600WS.SFC_P7542600WSHttpsSoap12Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="SFC_P7542600WSHttpEndpoint" binding="ns:SFC_P7542600WSHttpBinding">
+            <http:address location="http://procemisorqacolombia.procesadoraindra.local:8080/axis2SFC/services/SFC_P7542600WS.SFC_P7542600WSHttpEndpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="SFC_P7542600WSHttpsEndpoint" binding="ns:SFC_P7542600WSHttpBinding">
+            <http:address location="https://procemisorqacolombia.procesadoraindra.local:446/axis2SFC/services/SFC_P7542600WS.SFC_P7542600WSHttpsEndpoint/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
